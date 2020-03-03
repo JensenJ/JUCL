@@ -5,7 +5,7 @@ using TMPro;
 
 namespace JUCL.Utilities {
 
-    public static class TextUtils
+    public static class JUCLTextUtils
     {
         //Function to create world text with default settings
         public static TextMeshPro CreateWorldText(string text, Transform parent = null, Vector3 localPosition = default(Vector3),

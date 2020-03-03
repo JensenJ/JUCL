@@ -6,7 +6,7 @@ using TMPro;
 
 namespace JUCL.Utilities
 {
-    public class GridSystem<TGridObject>
+    public class JUCLGrid<TGridObject>
     {
 
         //Event for changing grid value
@@ -27,7 +27,7 @@ namespace JUCL.Utilities
         private float debugHeight;
 
         //Constructor
-        public GridSystem(int width, int height, float cellSize, Vector3 originPosition, Func<GridSystem<TGridObject>, int, int, TGridObject> createGridObject, bool showDebug, float debugHeight)
+        public JUCLGrid(int width, int height, float cellSize, Vector3 originPosition, Func<JUCLGrid<TGridObject>, int, int, TGridObject> createGridObject, bool showDebug, float debugHeight)
         {
             this.width = width;
             this.height = height;
@@ -57,7 +57,7 @@ namespace JUCL.Utilities
                     for (int y = 0; y < gridArray.GetLength(1); y++)
                     {
                         //Create text representation of value
-                        debugTextArray[x, y] = TextUtils.CreateWorldText(gridArray[x, y]?.ToString(), null, GetWorldPosition(x, y) + new Vector3(cellSize, 0, cellSize) * 0.5f, 2, Color.white, TextAlignmentOptions.Center);
+                        debugTextArray[x, y] = JUCLTextUtils.CreateWorldText(gridArray[x, y]?.ToString(), null, GetWorldPosition(x, y) + new Vector3(cellSize, 0, cellSize) * 0.5f, 2, Color.white, TextAlignmentOptions.Center);
                         //Draw debug grid lines
                         Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.white, 100f);
                         Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.white, 100f);
